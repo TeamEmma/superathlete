@@ -1,0 +1,32 @@
+{
+  "users" : {
+    {
+      "id" : 1,
+      "name" : "Anna",
+      "soccer_points" : 150,
+      "basketball_points" : 500,
+      "tennis_points" : 100,
+      "bonus_points" : 20,
+      "current_hero" : 1
+    }
+  },
+  "heroes" : {
+    "id" : 1,
+    "name" : "Serena Williams",
+    "sport" : "tennis",
+    "image" : "image_url..",
+    "workouts" : [1,2,3,4]
+  },
+  "workouts" : {
+    "id" : 1,
+    "name": "Sprints",
+    "url" : "https://giphy.com",
+    "points" : 100,
+    "goal_time" : 30,
+    "completed" : true,
+    "buddy" : false,
+    "time_started" : "timestamp",
+    "time_finished" : "timestamp",
+    "hero" : 1
+  }
+}
