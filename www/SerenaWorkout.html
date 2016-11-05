@@ -24,11 +24,11 @@
 
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://37.media.tumblr.com/4848e2ba02ee6d1174180d71d0088ee4/tumblr_ms83q7C1HR1ro3593o1_400.gif " style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3 class="w3-text-black">Lateral Lunges</h3>
-    <p>Alternating.</p>
+    <h3 class="w3-text-black">Lower Back Exercise</h3>
     <p>100 points</p>
     <p>5 minutes</p>
     <button class="btn start" id="startLunges">Start</button>
@@ -38,11 +38,14 @@
 <hr>
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://24.media.tumblr.com/3b7155311c8c17ae6adb329411bcb7c8/tumblr_ms83q7C1HR1ro3593o3_400.gif" style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3>Quick Feet In and Out</h3>
+    <h3>Crunches</h3>
     <p>Medium Intensity.</p>
+    <p>200 points</p>
+    <p>5 minutes</p>
     <button class="btn start" id="startFeet">Start</button>
     <button class="btn end" id="endLunges">End</button>
   </div>
@@ -50,11 +53,14 @@
 <hr>
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://37.media.tumblr.com/2c8507220a3d85035082f9af7af0672f/tumblr_ms83q7C1HR1ro3593o4_400.gif" style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3 class="w3-text-black">Heel-Kicks</h3>
+    <h3 class="w3-text-black">Back-Kicks</h3>
     <p>Alternating.</p>
+    <p>200 points</p>
+    <p>5 minutes</p>
     <button class="btn start" id="startHeelKicks">Start</button>
     <button class="btn end" id="endLunges">End</button>
   </div>
@@ -99,14 +105,14 @@ var workout = {
 
 $("#startLunges").click(function () {
   alert("Start your workout!");
-  $(".start").hide();
+  $("#startLunges").hide();
   workout.time_started = new Date();
-  $(".end").show();
+  $("#endLunges").show();
   console.log(workout.time_started);
 })
 
 $("#endLunges").click(function () {
-  alert("You have completed your workout!")
+
   // Save end_time to database
   workout.time_finished = new Date();
   // Complete workout
@@ -116,7 +122,7 @@ $("#endLunges").click(function () {
   var minutes_completed = Math.round(((ms_completed % 86400000) % 3600000) / 60000);
   var percentage_completed = minutes_completed / workout.goal_time;
   var final_points = Math.round((minutes_completed / workout.goal_time) * workout.points);
-  console.log('round points', final_points);
+  console.log('final points', final_points);
   if (hero.sport === "Tennis" ) {
     user.tennis_points += final_points;
   } else if (user.hero.sport === "Basketball") {
@@ -125,6 +131,9 @@ $("#endLunges").click(function () {
     user.soccer_points += final_points;
   }
   console.log('user points', user.tennis_points);
+  alert("You worked out for " + minutes_completed + " minutes. You have earned " + final_points + " points!");
+  $("#startLunges").show();
+  $("#endLunges").hide();
 })
 </script>
 
