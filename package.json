@@ -1,0 +1,26 @@
+{
+  "name": "superathlete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec 'nf start'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamEmma/superathlete.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamEmma/superathlete/issues"
+  },
+  "homepage": "https://github.com/TeamEmma/superathlete#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "foreman": "^1.4.1",
+    "mongoose": "^4.3.1",
+    "passport": "^0.3.2"
+  }
+}
