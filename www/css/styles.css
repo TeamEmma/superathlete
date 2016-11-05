@@ -1,7 +1,49 @@
-h1 {
-    color:#ffffff;
+header {
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Helvetica';
+    font-weight: lighter;
+    margin-top: 30px;
+    color:#fff;
+
 }
 
 body {
     background-color:#262E31;
+}
+
+
+/*footer nav styles*/
+.MainContainer {
+    width: 1200px;
+    background-color: #0066CC;
+}
+.MenuContainer {
+    height: 70px;
+
+}
+ul#navigation {
+    height: 70px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-width: 1px 0;    
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Cham-WebFont', Arial, sans-serif;
+    background-color: #FFF;
+    position:fixed;
+    bottom:0;
+    width:100%
+}
+ul#navigation li {
+    display: inline;
+    margin-right: .75em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul#navigation li.last {
+    margin-right: 0;
 }
