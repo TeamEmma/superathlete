@@ -1,10 +1,9 @@
 var express = require('express');
-var routes = require('./routes/index');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
 //require in user model and passport. still need to add facebook
 // var User = require('./models/User');
-var passport = require('passport');
+// var passport = require('passport');
 
 var app = express();
 var router = express.Router();
@@ -24,11 +23,19 @@ app.use(express.static(__dirname + '/www'));
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-mongoose.connect(config.dbURI);
-console.log(config.dbURI);
+// mongoose.connect(config.dbURI);
+// console.log(config.dbURI);
 
-app.use('/', routes);
-app.use(router);
+app.use('/', router);
+
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
+
+router.get("/",function(req,res){
+  res.sendFile(path + "index.html");
+});
 
 app.listen(config.port, function() {
   console.log('Express server listening on port', config.port);
