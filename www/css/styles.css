@@ -1,7 +1,17 @@
-h1 {
-    color:#ffffff;
+header {
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Helvetica';
+    font-weight: lighter;
+    margin-top: 30px;
+    color:#fff;
+
 }
 
 body {
     background-color:#262E31;
+}
+
+hr{
+    background-color: #A3FF4C;
 }
