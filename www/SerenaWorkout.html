@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <title>Super Athletes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <!--bootstrap-->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-red.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
 <body style="max-width:600px">
 </body>
@@ -24,31 +24,45 @@
 
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://37.media.tumblr.com/4848e2ba02ee6d1174180d71d0088ee4/tumblr_ms83q7C1HR1ro3593o1_400.gif " style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3 class="w3-text-black">Lateral Launges</h3>
-    <p>Alternating.</p>
+    <h3 class="w3-text-white">Lower Back Exercise</h3>
+    <p style="color:#ffffff;">100 points</p>
+    <p style="color:#ffffff;">5 minutes</p>
+    <button class="btn start" id="startLunges">Start</button>
+    <button class="btn end" id="endLunges">End</button>
   </div>
 </div>
 <hr>
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://24.media.tumblr.com/3b7155311c8c17ae6adb329411bcb7c8/tumblr_ms83q7C1HR1ro3593o3_400.gif" style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3>Quick Feet In and Out</h3>
-    <p>Medium Intensity.</p>
+    <h3 style="color:#ffffff;">Crunches</h3>
+    <p style="color:#ffffff;">Medium Intensity</p>
+    <p style="color:#ffffff;">200 points</p>
+    <p style="color:#ffffff;">5 minutes</p>
+    <button class="btn start" id="startFeet">Start</button>
+    <button class="btn end" id="endLunges">End</button>
   </div>
 </div>
 <hr>
 <div class="w3-row">
   <div class="w3-col s3">
-    <img class="w3-square" src="img_avatar.jpg" style="width:100%">
+    <img class="w3-square" src="
+http://37.media.tumblr.com/2c8507220a3d85035082f9af7af0672f/tumblr_ms83q7C1HR1ro3593o4_400.gif" style="width:100%">
   </div>
   <div class="w3-col s9 w3-container">
-    <h3 class="w3-text-black">Heel-Kicks</h3>
-    <p>Alternating.</p>
+    <h3 class="w3-text-white">Back-Kicks</h3>
+    <p style="color:#ffffff;">Alternating</p>
+    <p style="color:#ffffff;">200 points</p>
+    <p style="color:#ffffff;">5 minutes</p>
+    <button class="btn start" id="startHeelKicks">Start</button>
+    <button class="btn end" id="endLunges">End</button>
   </div>
 </div>
 <hr>
@@ -63,7 +77,64 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidenav").style.display = "none";
 }
+
+var user = {
+  name: "Emma",
+  soccer_points: 250,
+  basketball_points: 800,
+  tennis_points: 100,
+  bonus_points: 50
+}
+
+var hero = {
+  name: "Serena Williams",
+  image: "/images/cutoutSerena.png",
+  sport: "Tennis"
+}
+
+var workout = {
+  name: "Lunges",
+  points: 100,
+  url: "http://gph.is/1SGJCkm",
+  goal_time: 5,
+  completed: false,
+  buddy: false,
+  time_started: "",
+  time_finished: ""
+}
+
+$("#startLunges").click(function () {
+  alert("Start your workout!");
+  $("#startLunges").hide();
+  workout.time_started = new Date();
+  $("#endLunges").show();
+  console.log(workout.time_started);
+})
+
+$("#endLunges").click(function () {
+
+  // Save end_time to database
+  workout.time_finished = new Date();
+  // Complete workout
+  workout.completed = true;
+  // Add points based on workout time completed
+  var ms_completed = workout.time_finished - workout.time_started;
+  var minutes_completed = Math.round(((ms_completed % 86400000) % 3600000) / 60000);
+  var percentage_completed = minutes_completed / workout.goal_time;
+  var final_points = Math.round((minutes_completed / workout.goal_time) * workout.points);
+  console.log('final points', final_points);
+  if (hero.sport === "Tennis" ) {
+    user.tennis_points += final_points;
+  } else if (user.hero.sport === "Basketball") {
+    user.basketball_points += final_points;
+  } else {
+    user.soccer_points += final_points;
+  }
+  console.log('user points', user.tennis_points);
+  alert("You worked out for " + minutes_completed + " minutes. You have earned " + final_points + " points!");
+  $("#startLunges").show();
+  $("#endLunges").hide();
+})
 </script>
 
 </body>
-
