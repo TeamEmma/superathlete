@@ -28,7 +28,7 @@ ul#navigation {
     margin: 0;
     padding: 0;
     border: 1px solid #ccc;
-    border-width: 1px 0;    
+    border-width: 1px 0;
     text-align: center;
     font-size: 22px;
     font-family: 'Cham-WebFont', Arial, sans-serif;
@@ -46,4 +46,8 @@ ul#navigation li {
 }
 ul#navigation li.last {
     margin-right: 0;
+}
+/* workout functionality*/
+.end {
+  display: none;
 }
