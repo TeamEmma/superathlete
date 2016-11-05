@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec 'nf start'"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
     "foreman": "^1.4.1",
     "mongoose": "^4.3.1",
     "passport": "^0.3.2"
+  },
+  "devDependencies": {
+    "passport-facebook": "^2.1.1"
   }
 }
