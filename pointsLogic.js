@@ -22,9 +22,9 @@ function onClick () {
   var minutes_completed = Math.round(((ms_completed % 86400000) % 3600000) / 60000);
   var percentage_completed = minutes_completed / workout.goal_time;
   var final_points = Math.round((minutes_completed / goal_time) * total_points);
-  if (user.current_hero.sport === "tennis" ) {
+  if (user.hero.sport === "tennis" ) {
     user.tennis_points += final_points;
-  } else if (user.current_hero.sport === "basketball") {
+  } else if (user.hero.sport === "basketball") {
     user.basketball_points += final_points;
   } else {
     user.soccer_points += final_points;
