@@ -3,13 +3,19 @@ header {
     text-align: center;
     font-family: 'Helvetica';
     font-weight: lighter;
-    margin-top: 30px;
     color:#fff;
 
 }
 
 body {
     background-color:#262E31;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+    margin-left: 60px;
 }
 
 
