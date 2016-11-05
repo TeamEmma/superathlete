@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec 'nf start'"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/TeamEmma/superathlete/issues"
   },
-  "homepage": "https://github.com/TeamEmma/superathlete#readme"
+  "homepage": "https://github.com/TeamEmma/superathlete#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "foreman": "^1.4.1",
+    "mongoose": "^4.3.1",
+    "passport": "^0.3.2"
 }
